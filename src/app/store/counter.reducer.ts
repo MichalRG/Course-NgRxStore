@@ -9,6 +9,9 @@ export const counterReducer = createReducer(
 );
 
 // old way to create a reducer
-// export function counterReducerLegacyMethod(state = initialState) {
+// export function counterReducerLegacyMethod(state = initialState, action: any) {
+//   if (action.type === '[Counter] Increment') {
+//     return state + action.value;
+//   }
 //   return state;
 // }
