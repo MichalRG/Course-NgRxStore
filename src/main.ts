@@ -1,15 +1,16 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 
+import { provideEffects } from '@ngrx/effects';
 import { provideStore } from '@ngrx/store';
 import { AppComponent } from './app/app.component';
+import { CounterEffects } from './app/store/counter.effects';
 import { counterReducer } from './app/store/counter.reducer';
-import { provideEffects } from '@ngrx/effects';
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideStore({
-        counter: counterReducer,
+      counter: counterReducer,
     }),
-    provideEffects()
-],
+    provideEffects([CounterEffects]),
+  ],
 });
